@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>冬至</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #page-design-canvas {
+            position: relative;
+            width: 1242px;
+            height: 2208px;
+            transform-origin: left top;
+            background-color: rgb(255, 255, 255);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("{{ image1 if image1 else './images/bg2.jpeg' }}");
+        }
+
+        /* 修改半透明蒙层 */
+        .text-overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, {{ text4 if text4 else '0.3' }});  /* 统一的半透明黑色背景 */
+            pointer-events: none;
+        }
+
+        .layer {
+            position: absolute;
+        }
+
+        .w-text {
+            color: rgb(255, 255, 255);
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 冬至 - 大标题 */
+        #text-title {
+            left: 456px;
+            top: 167px;
+            width: 326px;
+            height: 600px;
+            font-size: 310px;
+            line-height: 325px;
+            letter-spacing: -50px;
+            writing-mode: vertical-rl;
+            font-family: 'Long-Cang-Regular';
+        }
+
+        /* 日期 */
+        #text-date {
+            left: 488px;
+            top: 350px;
+            width: 267px;
+            height: 62px;
+            font-size: 52px;
+            line-height: 62px;
+            text-align: center;
+            font-family: 'Long-Cang-Regular';
+        }
+
+        /* 祝福语 */
+        #text-content {
+            left: 556px;
+            top: 400px;
+            width: 131px;
+            height: 600px;
+            font-size: 42px;
+            line-height: 65px;
+            letter-spacing: 9.2px;
+            writing-mode: vertical-rl;
+            font-family: 'Long-Cang-Regular';
+        }
+
+        @font-face {
+            font-family: 'Long-Cang-Regular';
+            src: url('./fonts/Long-Cang-Regular.ttf') format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div id="page-design-canvas">
+        <div class="text-overlay"></div>
+        
+        <div id="text-title" class="w-text layer">
+            <div class="edit-text">{{ text1 if text1 else '冬至' }}</div>
+        </div>
+        <div id="text-date" class="w-text layer">
+            <div class="edit-text">{{ text2 if text2 else '12月21日' }}</div>
+        </div>
+        <div id="text-content" class="w-text layer">
+            <div class="edit-text">{{ text3 if text3 else '天时人事日相催，冬至阳生春又来。祝您冬至快乐。' }}</div>
+        </div>
+    </div>
+</body>
+</html> 

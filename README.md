@@ -1,6 +1,6 @@
 # ComfyUI Html2Image Nodes
 
-提供网页截图和相机水印功能。
+提供网页截图、相机水印、自由模板转图片功能。
 
 ![Workflow示例](workflow.png)
 
@@ -39,6 +39,19 @@
 - `device`: 拍摄参数，默认为 "23mm f/1.0 1/320 ISO1495"
 - `gps`: GPS 信息，默认为 "51°30'00\"N 0°10'00\"E"
 - `width`: 水印宽度，默认 1280，范围 64-2048
+
+### 3. 自由网页模板转图片 (Template To Image)
+支持任意网页模板转图片，可参考`templates/jieqi/template.html`目录下的模板文件：
+
+![节气 Workflow 示例](jieqi_workflow.png)
+
+参数说明：
+- `template_file`: 模板文件，默认为 "templates/jieqi/template.html"
+- `width`: 截图宽度，默认 1242，范围 64-4096
+- `height`: 截图高度，默认 2208，范围 64-4096
+- `wait_time_seconds`: 等待页面加载的时间（秒），默认 0.5，最小 0.1
+- `text1-text7`: 文本，传入模板后使用
+- `image1-image3`: 图像，传入模板后使用
 
 ## 安装
 
