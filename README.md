@@ -30,7 +30,7 @@
 - 自定义 GPS 信息
 - 可调整宽度
 
-> 如需更改模板可更改根目录下的 `camera_watermark_template.html` 文件
+> 如需更改模板可更改根目录下的 `template/camera_watermark/template.html` 文件
 
 参数说明：
 - `model`: 相机型号，默认为 "COMFYUI X1 ULTRA"
@@ -87,10 +87,10 @@
 - `text5`: 第一行底部文本（默认值："勇敢出发"）
 - `text6`: 第二行底部文本（默认值："遇见更好的自己"）
 - `text7`: 底部问候语（默认值："HAPPY NEW YEAR"）
-- `text8`: 遮罩层透明度（默认值："0.3"）
+- `text8`: 遮罩层透明度（默认值："0.3"，0无遮罩）
 
 **通用参数**：
-- `template_name`: 模板名称，可选值：["jieqi", "happy_new_year"]
+- `template_file`: 模板文件，可选值：["template/jieqi/template.html", "template/happy_new_year/template.html"]
 - `width`: 输出图片宽度（默认：640，范围：64-2048）
 - `height`: 输出图片高度（默认：1024，范围：64-2048）
 
