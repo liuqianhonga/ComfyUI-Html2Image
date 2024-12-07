@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 基准尺寸 */
+    --base-width: 430;
+    
+    /* 动态设置根字体大小 */
+    font-size: calc(var(--current-width, 430) / var(--base-width) * 16px);
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url('../fonts/SourceHanSansCN-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceHanSansCN';
+    src: url('../fonts/SourceHanSansCN-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+    font-family: 'SourceHanSansCN', Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-gradient {
+    background: linear-gradient(180deg, #ff9ecd 0%, #b088e6 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 所有内容元素的z-index */
+.logo, .domain, .main-text, .bottom-text, .happy-new-year, .qr-code, .buildings, .cloud {
+    z-index: 2;
+}
+
+.logo {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+}
+
+.domain {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.main-text {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    right: 5%;
+}
+
+.hello {
+    font-size: 6rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.625rem;
+    line-height: 1;
+}
+
+.chinese-text {
+    font-size: 3rem;
+    color: white;
+    margin-top: 0.625rem;
+    line-height: 1;
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    right: 5%;
+    text-align: left;
+    color: white;
+}
+
+.bottom-text h2 {
+    font-size: 2.625rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.happy-new-year {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.qr-code {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 5rem;
+    height: 5rem;
+    background: white;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.qr-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3.125rem;
+}
+
+.cloud-1 {
+    top: 10%;
+    right: 10%;
+    width: 6.25rem;
+    height: 2.5rem;
+}
+
+.cloud-2 {
+    top: 25%;
+    right: 15%;
+    width: 5rem;
+    height: 1.875rem;
+}
+
+.buildings {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.building {
+    background: rgba(255,255,255,0.3);
+    width: 5rem;
+    height: 22.5rem;
+    margin: 0 1rem;
+}
+
+.building.tall {
+    height: 30rem;
+}
+
+.tree {
+    position: absolute;
+    bottom: 12%;
+    width: 1.875rem;
+    height: 3.125rem;
+    background: #ff9ecd;
+    border-radius: 50%;
+}

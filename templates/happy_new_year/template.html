@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container {% if image1 %}container-image{% else %}container-gradient{% endif %}">
+        {% if image1 %}
+        <img src="{{ image1 }}" alt="background" style="width: 100%; height: 100%; object-fit: cover;">
+        {% endif %}
+        
+        <div class="text-overlay" style="background: rgba(0,0,0,{{ text8|default('0.3') }});"></div>
+        
+        <div class="logo">{{ text1|default('YOUR LOGO') }}</div>
+        <div class="domain">{{ text2|default('yourdomain.com') }}</div>
+        
+        <div class="main-text">
+            <div class="hello">{{ text3|default('Hello 2025') }}</div>
+            <div class="chinese-text">{{ text4|default('你好，2025') }}</div>
+        </div>
+        
+        <div class="bottom-text">
+            <h2>{{ text5|default('勇敢出发') }}</h2>
+            <h2>{{ text6|default('遇见更好的自己') }}</h2>
+        </div>
+        
+        <div class="happy-new-year">{{ text7|default('HAPPY NEW YEAR') }}</div>
+        
+        {% if not image1 %}
+        <div class="buildings">
+            <div class="building"></div>
+            <div class="building tall"></div>
+            <div class="building"></div>
+            <div class="building tall"></div>
+            <div class="building"></div>
+        </div>
+        
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        {% endif %}
+        
+        {% if image2 %}
+        <div class="qr-code">
+            <img src="{{ image2 }}" alt="QR Code">
+        </div>
+        {% endif %}
+    </div>
+    <script>
+        function updateRootFontSize() {
+            const container = document.querySelector('.container');
+            const containerWidth = container.offsetWidth;
+            document.documentElement.style.setProperty('--current-width', containerWidth);
+        }
+        
+        // 初始化时设置
+        updateRootFontSize();
+        
+        // 监听容器大小变化
+        if (typeof ResizeObserver !== 'undefined') {
+            const resizeObserver = new ResizeObserver(updateRootFontSize);
+            resizeObserver.observe(document.querySelector('.container'));
+        }
+    </script>
+</body>
+</html>

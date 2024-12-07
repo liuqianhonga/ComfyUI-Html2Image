@@ -69,7 +69,7 @@ class CameraWatermarkNode(BaseNode):
             'brand_uri': self.brand_data_uris.get(brand, '')
         }
         
-        template = self.jinja_env.get_template('camera_watermark_template.html')
+        template = self.jinja_env.get_template('templates/camera_watermark/template.html')
         rendered_html = template.render(**template_data)
         
         html_base64 = base64.b64encode(rendered_html.encode('utf-8')).decode('utf-8')
