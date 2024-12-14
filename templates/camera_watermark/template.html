@@ -19,7 +19,7 @@
         }
 
         .preview-info {
-            padding: 15px;
+            padding: 4rem 2rem;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -40,7 +40,7 @@
 
         .preview-info-split {
             border-left: 0.125rem solid #ddd;
-            height: 3rem;
+            height: 3.4rem;
             margin: 0.375rem 0.75rem;
         }
 
@@ -54,9 +54,9 @@
         .preview-info-model,
         .preview-info-device {
             font-weight: bold;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             line-height: 1.2;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.4rem;
         }
 
         .preview-info-date,
@@ -93,8 +93,7 @@
 <body>
     <div id="preview-info" class="preview-info">
         <div class="preview-info-left">
-            <div class="preview-info-model">{{ model }}</div>
-            <div class="preview-info-date">{{ date }}</div>
+            <div class="preview-info-model">{{ model_arr[0] }} <span style="font-weight: normal;">{{ model_arr[1] }}</span></div>
             <div class="preview-info-brand">
                 <img src="{{ brand_uri }}" />
             </div>
@@ -102,7 +101,7 @@
         <div class="preview-info-split"></div>
         <div class="preview-info-right">
             <div class="preview-info-device">{{ device }}</div>
-            <div class="preview-info-gps">{{ gps }}</div>
+            <div class="preview-info-gps">{{ date }} {{ gps }}</div>
         </div>
     </div>
 </body>

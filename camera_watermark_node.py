@@ -13,7 +13,7 @@ class CameraWatermarkNode(BaseNode):
         
         if os.path.exists(brand_dir):
             for file in os.listdir(brand_dir):
-                if file.endswith(('.svg', '.png')):
+                if file.endswith(('.svg', '.png', '.jpg', '.jpeg')):
                     brand_name = os.path.splitext(file)[0]
                     brand_options.append(brand_name)
                     brand_file_path = os.path.join(brand_dir, file)
@@ -24,6 +24,8 @@ class CameraWatermarkNode(BaseNode):
                             brand_data_uris[brand_name] = f"data:image/svg+xml;base64,{brand_file_base64}"
                         elif file.endswith('.png'):
                             brand_data_uris[brand_name] = f"data:image/png;base64,{brand_file_base64}"
+                        elif file.endswith(('.jpg', '.jpeg')):
+                            brand_data_uris[brand_name] = f"data:image/jpeg;base64,{brand_file_base64}"
         
         if not brand_options:
             brand_options = ["liuqianhong"]
@@ -60,12 +62,13 @@ class CameraWatermarkNode(BaseNode):
             
         template_data = {
             'model': model,
+            'model_arr': model.split(" ", 1),
             'date': date,
             'brand': brand,
             'device': device,
             'gps': gps,
             'width': width,
-            'height': 512,
+            'height': 1024,
             'brand_uri': self.brand_data_uris.get(brand, '')
         }
         
