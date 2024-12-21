@@ -9,9 +9,9 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "WebpageScreenshot": "Webpage Screenshot",
-    "CameraWatermark": "Camera Watermark",
-    "TemplateToImage": "Template To Image"
+    "WebpageScreenshot": "🐟Webpage Screenshot",
+    "CameraWatermark": "🐟Camera Watermark",
+    "TemplateToImage": "🐟Template To Image"
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS'] 
