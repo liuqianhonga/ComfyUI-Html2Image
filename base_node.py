@@ -17,17 +17,21 @@ class BaseNode:
     RETURN_TYPES = ("IMAGE",)
     FUNCTION = "to_image"
     CATEGORY = "image"
+    
+    # Class level service to avoid repeated driver checks
+    _service = None
 
     def __init__(self):
+        if BaseNode._service is None:
+            BaseNode._service = Service(ChromeDriverManager().install())
+            
         self.chrome_options = Options()
         self.chrome_options.add_argument('--headless')
         self.chrome_options.add_argument('--no-sandbox')
         self.chrome_options.add_argument('--disable-dev-shm-usage')
-        
-        self.service = Service(ChromeDriverManager().install())
 
     def _capture_screenshot(self, url, width, height, wait_time_seconds=0.5, element_id=None, element_selector=None, full_page=False):
-        driver = webdriver.Chrome(service=self.service, options=self.chrome_options)
+        driver = webdriver.Chrome(service=self._service, options=self.chrome_options)
         try:
             # 设置初始窗口大小
             driver.set_window_size(width, height or 1024)
@@ -88,4 +92,4 @@ class BaseNode:
             return tensor
         
         finally:
-            driver.quit() 
+            driver.quit()
