@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-html2image"
 description = "NODES: Webpage Screenshot, Camera Watermark, Template To Image"
-version = "1.0.0"
+version = "2.0.0"
 license = {file = "LICENSE"}
 dependencies = ["selenium>=4.0.0", "Pillow>=9.0.0", "webdriver_manager>=4.0.0", "torch>=2.0.0", "numpy>=1.24.0", "jinja2>=3.0.0"]
 
